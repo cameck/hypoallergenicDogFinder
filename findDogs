@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+CMD=${*:1}
+APP=puppy_finder
+
+if [[ $CMD == 'stop' ]]; then
+  printf 'Stopping Container'
+  docker stop $"(docker ps -q --filter ancestor=$APP)"
+  printf 'Container stopped 🕺'
+else
+  . ./local.cfg  # Petfinder API secrets
+  docker build -t $APP .
+  docker run -it --rm \
+    -e API_KEY=$API_KEY \
+    -e API_SECRET=$API_SECRET \
+    $APP
+fi
