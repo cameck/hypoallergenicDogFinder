@@ -1,1 +1,1 @@
-## Hypoallergenic Pet Finder
+## Hypoallergenic Dog Finder
