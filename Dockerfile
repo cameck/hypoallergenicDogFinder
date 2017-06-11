@@ -18,4 +18,4 @@ COPY . /usr/app
 # Clean APK cache
 RUN rm -rf /var/cache/apk/*
 
-ENTRYPOINT ['ruby', './bin/init.rb']
+ENTRYPOINT ["ruby", "./bin/init.rb"]
